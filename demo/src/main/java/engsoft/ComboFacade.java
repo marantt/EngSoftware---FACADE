@@ -17,6 +17,11 @@ public class ComboFacade {
     }
 
     public void criarCombo(int codigo) {
+        if (codigo < 1 || codigo > 3) {
+            System.out.println("Código inválido! Use 1, 2 ou 3.");
+            return;
+        }
+
         switch(codigo) {
             case 1:
                 nameCombo = "Combo Master";
@@ -45,6 +50,11 @@ public class ComboFacade {
         }
     }
 
+    private void exibirItem (String tipo, ItemCombo item){
+        System.out.printf("%-12s: %s - R$ %.2f%n", 
+                      tipo, item.getName(), item.getPrice());
+    }
+
     public void exibirItens() {
         if (combo == null) {
             System.out.println("Nenhum combo criado ainda!");
@@ -52,9 +62,9 @@ public class ComboFacade {
         }
 
         System.out.println("\n=== Detalhes do Pedido ===");
-        System.out.println(burger.getName());
-        System.out.println(bebida.getName());
-        System.out.println(sobremesa.getName());
+        exibirItem("Burger", combo.getBurger());
+        exibirItem("Bebida", combo.getBebida());
+        exibirItem("Sobremesa", combo.getSobremesa());
         System.out.println("==========================");
     }
 
