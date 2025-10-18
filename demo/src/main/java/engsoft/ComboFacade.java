@@ -17,25 +17,27 @@ public class ComboFacade {
     }
 
     public void criarCombo(int codigo) {
-        combo = new Combo(null, null, null);
         switch(codigo) {
             case 1:
                 nameCombo = "Combo Master";
                 burger = new Burger("Big Cheddar", 18.00);
                 bebida = new Bebida("Coca-Cola", 8.00);
                 sobremesa = new Sobremesa("Sundae", 9.90);
+                combo = new Combo(burger, bebida, sobremesa);
                 break;
             case 2:
                 nameCombo = "Super Combo";
                 burger = new Burger("Mega Bacon", 16.00);
                 bebida = new Bebida("Guaraná", 7.50);
                 sobremesa = new Sobremesa("Torta de Maçã", 9.00);
+                combo = new Combo(burger, bebida, sobremesa);
                 break;
             case 3:
                 nameCombo = "Combo Kids";
                 burger = new Burger("Mini Burger", 12.00);
                 bebida = new Bebida("Suco de laranja", 6.00);
                 sobremesa = new Sobremesa("Sorvete", 4.90);
+                combo = new Combo(burger, bebida, sobremesa);
                 break;
             default:
                 System.out.println("Código de combo inválido!");
