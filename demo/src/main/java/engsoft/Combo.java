@@ -24,7 +24,7 @@ public class Combo {
     }
 
     public double getPrecoTotal() {
-        return burger.getPrice() + bebida.getPrice() + sobremesa.getPrice();
+        return burger.getPrice() + bebida.getPrice() + sobremesa.getPrice(); 
     }
 
 }

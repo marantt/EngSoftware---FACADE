@@ -1,16 +1,23 @@
 package engsoft;
 
 public class ComboFacade {
+    Burger burger;
+    Bebida bebida;
+    Sobremesa sobremesa;
+    String nameCombo = "";
     private Combo combo;
     
+    
+
+    public ComboFacade(Burger burger, Bebida bebida, Sobremesa sobremesa, String nameCombo) {
+        this.burger = burger;
+        this.bebida = bebida;
+        this.sobremesa = sobremesa;
+        this.nameCombo = "";
+    }
 
     public void criarCombo(int codigo) {
         combo = new Combo(null, null, null);
-        Burger burger = null;
-        Bebida bebida = null;
-        Sobremesa sobremesa = null;
-        String nameCombo = "";
-
         switch(codigo) {
             case 1:
                 nameCombo = "Combo Master";
@@ -42,6 +49,14 @@ public class ComboFacade {
             return;
         }
 
-        System.out.println();
+        System.out.println("\n=== Detalhes do Pedido ===");
+        System.out.println(burger.getName());
+        System.out.println(bebida.getName());
+        System.out.println(sobremesa.getName());
+        System.out.println("==========================");
+    }
+
+    public double getPrecoTotal() {
+        return combo.getPrecoTotal();
     }
 }
